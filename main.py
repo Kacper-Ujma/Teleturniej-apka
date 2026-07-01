@@ -1,25 +1,14 @@
 import tkinter as tk
-from tkinter import *
+
+from views.menu import MainMenu
 
 
-def shut_down():
-    root.destroy()
+root = tk.Tk()
+root.title("Teleturniej")
+root.geometry("1280x720")
+root.resizable(False, False)
 
-root = Tk()
-root.title("Apka")
-
-mainframe = tk.Frame(root)
-
-
-
-loop_end = True
-counter = 0
-while root.winfo_exists():
-    shut = str(input("Write shut if you want to close app\n"))
-    shut = shut.lower()
-    shut = shut.replace(" ","")
-    if shut == "shut":
-        shut_down()
-        break
+app = MainMenu(root)
+app.pack(fill="both", expand=True)
 
 root.mainloop()
